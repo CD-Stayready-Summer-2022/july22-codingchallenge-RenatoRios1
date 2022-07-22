@@ -25,9 +25,24 @@ public class SolutionTest {
         Assertions.assertArrayEquals(expected,actual);
     }
 
+    @Test
+    public void numberFamily03(){
+        Solution solution = new Solution();
+        Integer number = 4;
+        Integer[] possibleFamilyMembers = new Integer[]{3,2,1,6,8,4};
+        Integer[] expected = new Integer[]{1,2,3,4};
+        Integer[]  actual = solution.numberFamily2(number, possibleFamilyMembers);
+        Assertions.assertArrayEquals(expected,actual);
+    }
 
-
-
-
+    @Test
+    public void numberFamily04(){
+        Solution solution = new Solution();
+        Integer number = 8;
+        Integer[] possibleFamilyMembers = new Integer[]{3,7,10,6,8,9,2,1};
+        Integer[] expected = new Integer[]{6,7,8,9,10};
+        Integer[]  actual = solution.numberFamily2(number, possibleFamilyMembers);
+        Assertions.assertArrayEquals(expected,actual);
+    }
 
 }

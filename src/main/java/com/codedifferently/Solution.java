@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class Solution {
     /**
@@ -53,6 +54,32 @@ public class Solution {
             index++;
         }
         return answer.toArray(new Integer[0]);
+    }
+
+    public Integer[] numberFamily2(Integer number, Integer[] possibleFamilyMembers) {
+        List<Integer> arr = new ArrayList<>(Arrays.asList(possibleFamilyMembers));
+        ArrayList<Integer> returnArr = new ArrayList<>();
+        //going down
+        int index = number;   //inclusive of number in question
+        while (true) {
+            if (arr.contains(index)) {
+                returnArr.add(0, index);         //Normall addition to back of Arraylist since ever number added is larger than previous
+            } else {
+                break;
+            }
+            index--;
+        }
+        //going up
+        index = number + 1;   //exclusive of number in question
+        while (true) {
+            if (arr.contains(index)) {
+                returnArr.add(index);         //Normall addition to back of Arraylist since ever number added is larger than previous
+            } else {
+                break;
+            }
+            index++;
+        }
+        return returnArr.toArray(new Integer[0]);
     }
 }
 
