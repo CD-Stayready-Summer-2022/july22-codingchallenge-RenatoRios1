@@ -33,7 +33,7 @@ public class Solution {
         }
         ArrayList<Integer> answer = new ArrayList<>();
         //going down
-        int index = number;     //inclusive for the number in question
+        int index = number;     //inclusive for the number parameter in question
         while (true) {
             if (map.containsKey(index)) {
                 answer.add(0, map.get(index));  //Add to the front since every number added is smaller than the previous
@@ -52,12 +52,7 @@ public class Solution {
             }
             index++;
         }
-        Integer[] arr = answer.toArray(new Integer[0]);
-
-        for(int i = 0; i < arr.length; i++){
-            System.out.println(arr[i] + " ");
-        }
-        return arr;
+        return answer.toArray(new Integer[0]);
     }
 }
 
